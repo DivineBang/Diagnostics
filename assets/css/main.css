@@ -237,3 +237,229 @@ ul,li{
 .btn__form:hover {
     background: #FE8C00;
 }
+.offer__set{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.offer__wrapp{
+    width: 525px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.offer__title{
+    font-size: 50px;
+    color: #fff;
+}
+.offer__text{
+    color: rgb(255, 255, 255,0.6);
+    font-size: 18px;
+}
+.offer__btn{
+    margin-left: 0;
+}
+.offer__rect{
+    position: absolute;
+    top: 620px;
+    right: 0.1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    clip-path: polygon(0 0, 0 100%, 350% 100%);
+}
+.offer__rect_img{
+    
+    width: 26px;
+    height: 26px;
+}
+.partners {
+    padding: 30px 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.partners__slider {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.partners__track {
+    display: flex;
+    width: max-content;
+}
+
+.partners__img {
+    width: 100px;
+    height: 35px;
+    margin: 0 20px;
+    flex-shrink: 0;
+}
+.video{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 600px;
+    cursor: pointer;
+}
+#fullscreen-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.video__set {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    z-index: 1; 
+    color: #fff; 
+}
+
+.video__title {
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+.video__wrapp {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 70px;
+    margin-right: auto;
+}
+
+.video__wrapp_img {
+    width: 60px;
+    height: 60px;
+    margin-right: 30px;
+}
+.video__wrapp_text{
+    font-size: 34px;
+    text-transform: uppercase;
+}
+.video__mix {
+    display: flex;
+    text-align: center;
+    justify-content: end;
+    margin-bottom: 40px;
+}
+
+.video__mix_text {
+    width: 350px;
+    text-align: start;
+    font-size: 16px;
+    margin-right: 30px;
+   
+}
+
+.video__mix_btn {
+    color: #fff;
+    text-transform: uppercase;
+}
+.video__rect{
+    position: absolute;
+    top: 520px;
+    left: 0.1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    clip-path: polygon(100% 0, 100% 100%, -250% 100%)
+}
+.industrial{
+    padding: 70px 0;
+}
+.industrial__title{
+    width: 632px;
+    font-size: 45px;
+}
+.industrial__set{
+    padding: 70px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Внешний прямоугольник с оранжевым фоном */
+.industrial__rect-container {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    background-color: #FF5C00; /* Оранжевый цвет */
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 35%, 85% 0); /* Срезаем угол */
+}
+
+/* Внутренний прямоугольник с белым фоном */
+.industrial__rect-inner {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px); /* Уменьшаем ширину на 2 пикселя с каждой стороны */
+    height: calc(100% - 4px); /* Уменьшаем высоту на 2 пикселя с каждой стороны */
+    background-color: #fff; /* Белый цвет */
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 35%, 85% 0); /* Срезаем угол аналогично внешнему */
+}
+
+.industrial__wrapp{
+    width: 100%;
+    padding: 30px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.industrial__wrapp_title, .industrial__wrapp_title-1{
+    font-size: 45px;
+    color: #FF5C00;
+}
+.industrial__wrapp_kit{
+    display: flex;
+}
+.industrial__wrapp_title-2{
+    font-size: 18px;
+    color: #FF5C00;
+}
+.industrial__wrapp_text{
+    font-size: 16px;
+    line-height: 20px;
+}
+.industrial__line{
+    width: 100%;
+    height: 2px;
+    background-color: #00000038;
+}
+.industrial__mix{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+}
+.industrial__item{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.industrial__item_text{
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.industrial__item_img{
+    width: 60px;
+    height: 61px;
+}

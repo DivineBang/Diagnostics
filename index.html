@@ -21,6 +21,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/slick.css"> 
     <link rel="stylesheet" href="assets/css/main.css">   
 </head>
 <body>
@@ -64,7 +66,7 @@
                             <p class="text__form">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
                             <form action="#" class="popup__form" id="popup__form">
                                 <input type="text" placeholder="Your name" name="firstName" class="input" required>
-                                <input type="tel" placeholder="+38 (066) 6" name="phone" class="input" required>
+                                <input type="tel" placeholder="(066) 122-1111" name="phone" class="input input-phone" required>
                                 <input type="email" placeholder="E-mail" name="email" class="input" required>
                                 <input type="checkbox" name="privacy-policy" class="custom-checkbox" id="privacy-policy-checkbox" required>
                                 <label class="label" for="privacy-policy-checkbox">
@@ -79,9 +81,127 @@
             </div>
         </header>
         <div class="container">
-                
+                <div class="offer__set">
+                    <div class="offer__wrapp">
+                        <h1 class="offer__title">
+                            Maximizing equipment performance with minimal effort
+                        </h1>
+                        <p class="offer__text">
+                            The Easiest Predictive Maintenance Based on AI Sound Analysis
+                        </p>
+                        <a href="" class="offer__btn popup__btn">
+                            <p class="popup__text">Request a demo</p>
+                        </a>
+                    </div>
+                    <img src="assets/img/phone_hand.png" alt="" class="offer__img">
+                </div>
+        </div> 
+        <div class="offer__rect">
+            <img src="assets/img/arrow_down_orange.png" alt="" class="offer__rect_img">
         </div>
-
+    </section>
+    <section class="partners" id="partners">
+        <div class="partners__slider">
+            <div class="partners__track">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                <img src="assets/img/dtek_1.png" alt="" class="partners__img">
+                
+            </div>
+        </div>
+    </section>
+    
+    <section class="video" id="video">
+        <video id="fullscreen-video" autoplay loop muted playsinline>
+            <source src="assets/img/Dmytro_1.mp4" type="video/mp4">     
+        </video>
+        
+        <div class="video__set">
+            <h2 class="video__title">
+                How it works?
+            </h2>
+            <div class="video__wrapp">
+                <img src="assets/img/play.png" alt="play" class="video__wrapp_img">
+                <p class="video__wrapp_text">
+                    PLAY VIDEO
+                </p>
+            </div>
+            <div class="video__mix">
+                <p class="video__mix_text">
+                    Di-agnostics is a Condition Monitoring  and Predictive Maintenance SaaS based on AI sound analytics for heat engines and electrical motors. 
+                </p>
+                <a href="" class="video__mix_btn popup__btn">
+                    Request a demo
+                </a>
+            </div>
+        </div>
+        <div class="video__rect">
+            
+        </div>
+    </section> 
+    <section class="industrial" id="industrial">
+	    <div class="container">
+            <h2 class="industrial__title">
+                Unplanned downtime is the plague of the industrial sector
+            </h2>
+            
+            <div class="industrial__set">
+                <div class="industrial__rect-container">
+                    <div class="industrial__rect-inner">
+                        <div class="industrial__wrapp">
+                            <h4 class="industrial__wrapp_title">
+                                $1,5TN/year
+                            </h4>
+                            <p class="industrial__wrapp_text">
+                                The average cost of lost revenue, financial penalties, idle staff time, and restarting lines. On average, large plants lose 323 production hours a year.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="industrial__rect-container">
+                    <div class="industrial__rect-inner">
+                        <div class="industrial__wrapp">
+                            <div class="industrial__wrapp_kit">
+                                <h4 class="industrial__wrapp_title-1">
+                                    $532K/hour
+                                </h4>
+                                <p class="industrial__wrapp_title-2">
+                                    or $172M annually per plant
+                                </p>
+                            </div>
+                            <p class="industrial__wrapp_text">
+                                Losses of Fortune Global 500 industrial organizations due to unplanned downtime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="industrial__line">
+                    
+            </div>
+            <div class="industrial__mix">
+                <div class="industrial__item">
+                    <img src="assets/img/item_1.png" alt="" class="industrial__item_img">
+                    <p class="industrial__item_text">Improve efficiency</p>
+                </div>
+                <div class="industrial__item">
+                    <img src="assets/img/item_2.png" alt="" class="industrial__item_img">
+                    <p class="industrial__item_text">Reduce downtime</p>
+                </div>
+                <div class="industrial__item">
+                    <img src="assets/img/item_3.png" alt="" class="industrial__item_img">
+                    <p class="industrial__item_text">Stay competetive</p>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="tabs" id="tabs">
 	    <div class="container">
@@ -94,6 +214,8 @@
         </div>
     </footer>
 
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/slick.min.js"></script> 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
