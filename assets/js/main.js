@@ -1,19 +1,19 @@
 
-/* $(document).ready(function(){
-  $('.center').slick({
+$(document).ready(function(){
+  $('.real__slider').slick({
     centerMode: true,
     autoplay: true,
-    autoplaySpeed: 2500,
-    speed: 1500,
-    centerPadding: '10px',
-    slidesToShow: 3,
+    autoplaySpeed: 3000,
+    speed: 2000,
+    centerPadding: '0',
+    slidesToShow: 1,
     responsive: [
       {
         breakpoint: 1201,
         settings: {
           
           centerMode: true,
-          centerPadding: '50px',
+          centerPadding: '0',
           slidesToShow: 2
         }
       },
@@ -70,7 +70,7 @@
       
     ]
   });
-});  */   
+});   
 
 
 //dtek scrol
@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Начальные параметры
   let scrollAmount = 0;
-  const scrollSpeed = 1; // Скорость скролла
+  const scrollSpeed = 0.5; // Скорость скролла
 
   function scrollSlider() {
       scrollAmount += scrollSpeed;
@@ -102,6 +102,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
   scrollSlider(); // Запускаем анимацию скроллинга
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const caseTrack = document.querySelector('.case__track'); // Изменено на caseTrack
+  const caseImages = caseTrack.querySelectorAll('.case__wrapp'); // Изменено на caseImages
+
+  const imageWidth = caseImages[0].clientWidth + 40; // Ширина блока + отступ
+  const trackWidth = caseTrack.scrollWidth / 2; // Полная ширина трека с дублированием
+
+  // Дублируем контент
+  caseTrack.innerHTML += caseTrack.innerHTML;
+
+  // Начальные параметры
+  let scrollAmount = 0;
+  const scrollSpeed = 0.5; // Скорость скролла
+
+  function scrollSlider() {
+      scrollAmount += scrollSpeed;
+
+      // Если прокрутили весь контент, то сбрасываем назад
+      if (scrollAmount >= trackWidth) {
+          scrollAmount = 0; // Сброс к началу
+      }
+
+      // Двигаем трек
+      caseTrack.style.transform = `translateX(-${scrollAmount}px)`;
+      requestAnimationFrame(scrollSlider);
+  }
+
+  scrollSlider(); // Запускаем анимацию скроллинга
+});
+
+
 
 
 //Ограничение по цифрам ввода номера + запрет на ввод букв + ввод номера телефона как в placeholder (Обращаемся по класу input-phone )
@@ -139,14 +171,13 @@ document.querySelectorAll('.input-phone').forEach(function (input) {
 
 
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const popup = document.querySelector('.popup');
     const popupBtn = document.querySelector('.popup__btn');
     const popupBtn2 = document.querySelector('.offer__btn');
     const popupBtn3 = document.querySelector('.video__mix_btn');
+    const popupBtn4 = document.querySelector('.how__btn');
+    const popupBtn5 = document.querySelector('.footer__btn');
     const closeBtn = document.querySelector('.close-btn');
 
     // Открытие попапа
@@ -164,6 +195,16 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault();
       popup.classList.add('popup__open');
     });
+
+    popupBtn4.addEventListener('click', function(event) {
+      event.preventDefault();
+      popup.classList.add('popup__open');
+    });
+    popupBtn5.addEventListener('click', function(event) {
+      event.preventDefault();
+      popup.classList.add('popup__open');
+    });
+
 
     // Закрытие попапа при клике на затемнённую область
     popup.addEventListener('click', function(event) {
@@ -207,6 +248,61 @@ document.addEventListener('DOMContentLoaded', () => {
       video.muted = !video.muted;
     }
   });
+});
+
+// Текст в слайдер
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.real__btn');
+  const title = document.querySelector('.real__wrapp_title');
+
+  // Текст, который будет добавлен
+  const additionalText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+  when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+  when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+  when an unknown printer took a galley of type and scrambled it to make a type specimen book.`;
+
+  // Обработчик события на кнопку
+  btn.addEventListener('click', (e) => {
+      e.preventDefault(); // Отменяем стандартное поведение ссылки
+      title.textContent = additionalText; // Добавляем текст в элемент
+  });
+});
+
+/* animation */
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const rectAnimations = document.querySelectorAll('.rect__animation');
+    const itemAnimations = document.querySelectorAll('.item__animation');
+    
+
+    function handleScrollAnimation() {
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+       
+
+        // Плавное появление прямоугольников
+        rectAnimations.forEach((rect) => {
+            if (rect.getBoundingClientRect().top <= windowHeight - 50) {
+                rect.classList.add('visible');
+            }
+        });
+
+        // Плавное появление элементов
+        itemAnimations.forEach((item) => {
+            if (item.getBoundingClientRect().top <= windowHeight - 50) {
+                item.classList.add('visible');
+            }
+        });
+        
+    }
+    
+    window.addEventListener('scroll', handleScrollAnimation);
+    handleScrollAnimation(); // Запуск для элементов, уже находящихся в видимой области
 });
 
 
