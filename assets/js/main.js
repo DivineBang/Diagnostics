@@ -22,7 +22,7 @@ $(document).ready(function(){
         settings: {
           
           centerMode: true,
-          centerPadding: '10px',
+          centerPadding: '0',
           slidesToShow: 2
         }
       },
@@ -32,7 +32,7 @@ $(document).ready(function(){
         settings: {
           
           centerMode: true,
-          centerPadding: '50px',
+          centerPadding: '0',
           slidesToShow: 1
         }
       },
@@ -41,7 +41,7 @@ $(document).ready(function(){
         settings: {
           
           centerMode: true,
-          centerPadding: '5px',
+          centerPadding: '0',
           slidesToShow: 1
         }
         
@@ -71,6 +71,21 @@ $(document).ready(function(){
     ]
   });
 });   
+
+//burger
+$('.header__menu').click(function (event) {
+  $('.menu').toggleClass('active__menu');
+});
+
+  // Изменять иконку burger при клике
+  $('.header__menu').click(function (event) {
+      var menuImage = $('.burger__img');
+      if (menuImage.attr('src').includes('close_burger')) {
+          menuImage.attr('src', 'assets/img/burger.svg');
+      } else {
+          menuImage.attr('src', 'assets/img/close_burger.svg');
+      }
+  });
 
 
 //dtek scrol
@@ -178,6 +193,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const popupBtn3 = document.querySelector('.video__mix_btn');
     const popupBtn4 = document.querySelector('.how__btn');
     const popupBtn5 = document.querySelector('.footer__btn');
+    const popupBtn6 = document.querySelector('.footer__btn_tablet');
+    const popupBtn7 = document.querySelector('.footer__btn_mob');
+    const popupBtn8 = document.querySelector('.popup__btn_mob');
+
     const closeBtn = document.querySelector('.close-btn');
 
     // Открытие попапа
@@ -201,6 +220,18 @@ document.addEventListener('DOMContentLoaded', function() {
       popup.classList.add('popup__open');
     });
     popupBtn5.addEventListener('click', function(event) {
+      event.preventDefault();
+      popup.classList.add('popup__open');
+    });
+    popupBtn6.addEventListener('click', function(event) {
+      event.preventDefault();
+      popup.classList.add('popup__open');
+    });
+    popupBtn7.addEventListener('click', function(event) {
+      event.preventDefault();
+      popup.classList.add('popup__open');
+    });
+    popupBtn8.addEventListener('click', function(event) {
       event.preventDefault();
       popup.classList.add('popup__open');
     });
@@ -304,6 +335,21 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScrollAnimation);
     handleScrollAnimation(); // Запуск для элементов, уже находящихся в видимой области
 });
+
+
+
+/* Прокрутка к секции #real */
+// Функция для плавной прокрутки к #real
+function scrollToReal(event) {
+  event.preventDefault(); // Предотвращаем переход по ссылке
+  document.querySelector('#real').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
+
+// Присваиваем функцию обоим элементам
+document.getElementById('scroll-to-real').addEventListener('click', scrollToReal);
+document.getElementById('scroll-to-real-mob').addEventListener('click', scrollToReal);
 
 
 
