@@ -118,37 +118,6 @@ window.addEventListener('DOMContentLoaded', () => {
   scrollSlider(); // Запускаем анимацию скроллинга
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  const caseTrack = document.querySelector('.case__track'); // Изменено на caseTrack
-  const caseImages = caseTrack.querySelectorAll('.case__wrapp'); // Изменено на caseImages
-
-  const imageWidth = caseImages[0].clientWidth + 40; // Ширина блока + отступ
-  const trackWidth = caseTrack.scrollWidth / 2; // Полная ширина трека с дублированием
-
-  // Дублируем контент
-  caseTrack.innerHTML += caseTrack.innerHTML;
-
-  // Начальные параметры
-  let scrollAmount = 0;
-  const scrollSpeed = 0.5; // Скорость скролла
-
-  function scrollSlider() {
-      scrollAmount += scrollSpeed;
-
-      // Если прокрутили весь контент, то сбрасываем назад
-      if (scrollAmount >= trackWidth) {
-          scrollAmount = 0; // Сброс к началу
-      }
-
-      // Двигаем трек
-      caseTrack.style.transform = `translateX(-${scrollAmount}px)`;
-      requestAnimationFrame(scrollSlider);
-  }
-
-  scrollSlider(); // Запускаем анимацию скроллинга
-});
-
-
 
 
 //Ограничение по цифрам ввода номера + запрет на ввод букв + ввод номера телефона как в placeholder (Обращаемся по класу input-phone )
@@ -282,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Текст в слайдер
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('.real__btn');
   const title = document.querySelector('.real__wrapp_title');
 
@@ -303,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title.textContent = additionalText; // Добавляем текст в элемент
   });
 });
-
+ */
 /* animation */
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -353,7 +322,55 @@ document.getElementById('scroll-to-real-mob').addEventListener('click', scrollTo
 
 
 
+// Функция для обновления содержимого при клике на блок
+function updateRealContent(number) {
+  // Обновляем текст заголовка
+  document.querySelector('.real__wrapp_title').textContent = `Lorem ${number}`;
 
+  // Обновляем изображение
+  document.querySelector('.real__person_img').src = `assets/img/team_${number}.png`;
+
+  // Обновляем имя и должность
+  document.querySelector('.real__person_title').textContent = `John Davis ${number}`;
+  document.querySelector('.real__person_text').textContent = `VP of Western Operations ${number}`;
+
+  // Сохраняем текущий номер в data-атрибуте кнопки
+  document.querySelector('.real__btn').setAttribute('data-current', number);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.real__btn');
+  const title = document.querySelector('.real__wrapp_title');
+  const initialText = title.textContent;
+
+  // Текст, который будет добавлен
+  const additionalText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+  when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+  when an unknown printer took a galley of type and scrambled it to make a type specimen book.`;
+
+  // Обработчик события на кнопку
+  btn.addEventListener('click', (e) => {
+      e.preventDefault(); // Отменяем стандартное поведение ссылки
+
+      const currentNumber = btn.getAttribute('data-current');
+      const isExpanded = title.getAttribute('data-expanded') === 'true';
+
+      if (isExpanded) {
+          // Если текст уже развернут, скрываем дополнительный текст
+          title.textContent = `Lorem ${currentNumber}`;
+          title.setAttribute('data-expanded', 'false');
+          btn.textContent = 'MORE DETAILS';
+      } else {
+          // Иначе показываем дополнительный текст
+          title.textContent = additionalText;
+          title.setAttribute('data-expanded', 'true');
+          btn.textContent = 'LESS DETAILS';
+      }
+  });
+});
 
 
 

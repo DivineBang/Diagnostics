@@ -660,7 +660,7 @@ ul,li{
 }
 .our{
     position: relative;
-    padding: 70px 0;
+    padding-top: 70px;
     background: #181818;
 }
 .our__rect{
@@ -680,50 +680,22 @@ ul,li{
     font-size: 45px;
     color: #fff;
     text-align: center;
+    padding-bottom: 50px;
 }
-.case{
-    background: #181818;
-}
-.case__slider {
+.our__set{
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden; /* Скрыть лишнее содержимое, чтобы убрать скролл */
-    width: 100%; /* Установите ширину слайдера, если это необходимо */
+    justify-content: space-between;
+}
+.our__wrapp{
+    padding: 20px 40px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.case__track {
-    display: flex;
-    width: max-content; /* Убедитесь, что это не вызывает избыточной ширины */
-}
 
-.case__wrapp {
-    position: relative;
-    display: flex; /* Используйте flex для центрирования */
-    align-items: center; /* Центровка по вертикали */
-    justify-content: center; /* Центровка по горизонтали */
-    width: 180px; /* Ширина контейнера соответствует фону */
-    height: 80px; /* Высота контейнера соответствует фону */
-    flex-shrink: 0; /* Убедитесь, что элементы не сжимаются */
-    margin: 0 20px; /* Отступ между элементами */
-}
 
-.case__wrapp::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 180px; /* Ширина фона */
-    height: 80px; /* Высота фона */
-    background-color: #fff; /* Цвет фона */
-    z-index: -1; /* Псевдоэлемент позади изображения */
-    border-radius: 5px; /* Закругление углов */
-}
 
-.case__img {
-    width: 90px; /* Ширина изображения */
-    height: 32px; /* Высота изображения */
-}
 .real{
     padding: 70px 0;
     background: #181818;
@@ -1487,7 +1459,11 @@ ul,li{
         gap: 50px;
         padding-top: 70px;
     }
-    
+    .our__set{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
 }
 
 /* 576-767 */
@@ -1693,6 +1669,13 @@ ul,li{
     .industries__rect{
         width: 100%;
     }
+    .help__rect{
+        width: 100%;
+    }
+    .help__wrapp {
+        padding: 20px;
+        gap: 10px;
+    }
     .industries__wrapp_text{
         font-size: 16px;
     }
@@ -1767,6 +1750,9 @@ ul,li{
     }
     .industrial__wrapp_title-2{
         font-size: 14px;
+    }
+    .our__set{
+        gap: 30px;
     }
 }
 
