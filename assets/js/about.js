@@ -136,3 +136,99 @@ $('.header__menu').click(function (event) {
             menuImage.attr('src', 'assets/img/close_burger.svg');
         }
     });
+
+    
+function changeImage(element, newSrc) {
+  element.querySelector('.footer__social_img').src = newSrc;
+  
+}
+
+
+$(document).ready(function() {
+  function changeImage(element, newSrc) {
+      element.src = newSrc;
+  }
+
+  // Left arrow hover
+  $('#leftArrow').hover(
+      function() {
+          changeImage(this, 'assets/img/arrow_left-h.svg'); // Change to hover image
+      },
+      function() {
+          changeImage(this, 'assets/img/arrow_left.svg'); // Change back to original
+      }
+  );
+
+  // Right arrow hover
+  $('#rightArrow').hover(
+      function() {
+          changeImage(this, 'assets/img/arrow_right-h.svg'); // Change to hover image
+      },
+      function() {
+          changeImage(this, 'assets/img/arrow_right.svg'); // Change back to original
+      }
+  );
+});
+
+$(document).ready(function() {
+  $('.social-icon').hover(
+      function() {
+          // On mouse enter, store the original src and change to hover image
+          const originalSrc = $(this).attr('src'); // Store original source
+          $(this).data('original-src', originalSrc); // Store original src in data attribute
+          const hoverSrc = $(this).data('hover-src'); // Get hover image source
+          $(this).attr('src', hoverSrc); // Change to hover image
+      },
+      function() {
+          // On mouse leave, revert to the original image
+          const originalSrc = $(this).data('original-src'); // Get original src from data attribute
+          $(this).attr('src', originalSrc); // Change back to original image
+      }
+  );
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const languageSet = document.querySelector('.language__set');
+  const languageOptions = document.querySelector('.language__options');
+  const arrowIcon = document.querySelector('.arrow-icon');
+
+  languageSet.addEventListener('click', function(event) {
+      event.preventDefault(); // Предотвращаем переход по ссылке
+
+      // Переключаем класс для отображения меню
+      languageOptions.classList.toggle('language__options_menu');
+
+      // Переключаем класс для поворота стрелки
+      arrowIcon.classList.toggle('rotated');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const languageSetDesktop = document.querySelector('.header__set .language__set');
+  const languageOptionsDesktop = document.querySelector('.header__set .language__options');
+  const arrowIconDesktop = document.querySelector('.header__set .arrow-icon');
+
+  const languageSetMobile = document.querySelector('.header__set_mob .language__set');
+  const languageOptionsMobile = document.querySelector('.header__set_mob .language__options');
+  const arrowIconMobile = document.querySelector('.header__set_mob .arrow-icon');
+
+  // Функция для переключения меню и иконки
+  function toggleLanguageMenu(languageOptions, arrowIcon) {
+    languageOptions.classList.toggle('language__options_menu');
+    arrowIcon.classList.toggle('rotated');
+  }
+
+  // Обработчик для десктопной версии
+  languageSetDesktop.addEventListener('click', function(event) {
+    event.preventDefault();
+    toggleLanguageMenu(languageOptionsDesktop, arrowIconDesktop);
+  });
+
+  // Обработчик для мобильной версии
+  if (languageSetMobile) {
+    languageSetMobile.addEventListener('click', function(event) {
+      event.preventDefault();
+      toggleLanguageMenu(languageOptionsMobile, arrowIconMobile);
+    });
+  }
+});

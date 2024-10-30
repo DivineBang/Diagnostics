@@ -814,7 +814,7 @@ ul,li{
 }
 .slick-next{
     content: '';
-    background: url(../img/arrow_right.png) no-repeat center !important;
+    background: url(../img/arrow_right.svg) no-repeat center !important;
     width: 41px;
     height: 41px;
     top: 50%;
@@ -823,15 +823,21 @@ ul,li{
 }
 .slick-prev{
     content: '';
-    background: url(../img/arrow_left.png) no-repeat center !important;
+    background: url(../img/arrow_left.svg) no-repeat center !important;
     width: 41px;
     height: 41px;
     left: -20px;
     top: 50%;
     z-index: 1;
 }
-/* slider end*/
+.slick-next:hover {
+    background-image: url(../img/arrow_right-h.svg) !important;
+}
 
+.slick-prev:hover {
+    background-image: url(../img/arrow_left-h.svg) !important;
+}
+/* slider end*/
 
 .less__set{
    
@@ -1016,6 +1022,9 @@ ul,li{
     font-weight: 500;
     font-size: 14px;
     color: rgb(255, 255, 255,0.6);
+}
+.privacy__titel:hover{
+    color: #FF5C00;
 }
 .privacy__set{
     display: flex;
@@ -1247,6 +1256,59 @@ ul,li{
     font-size: 16px;
     color: #101820;
 }
+.footer__social_item:hover .footer__social_img {
+    content: url("assets/img/social_1-h.svg");
+}
+
+/* Для второго элемента */
+.footer__social_item:nth-child(2):hover .footer__social_img {
+    content: url("assets/img/social_2-h.svg");
+}
+
+/* Для третьего элемента */
+.footer__social_item:nth-child(3):hover .footer__social_img {
+    content: url("assets/img/social_3-h.svg");
+}
+
+.language__options {
+    display: none; /* Скрываем по умолчанию */
+}
+.language__set {
+    position: relative; /* Чтобы .language__options_menu позиционировался относительно этого элемента */
+}
+.language__options_menu {
+    display: block; /* Показываем при добавлении класса */
+    position: absolute; /* Абсолютное позиционирование */
+    background: white; /* Фон */
+    border-radius: 5px; /* Закругление */
+    padding: 10px; /* Отступы */
+    z-index: 100; /* Для обеспечения видимости */
+    top:    90px; /* Размещаем меню сразу под .language__set */
+    left: 70%; /* Отцентрируем по горизонтали */
+    transform: translateX(-50%); /* Сместим на половину ширины для точного центрирования */
+    text-align: center;
+    width: 120px; /* Устанавливаем фиксированную ширину */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+
+.language__options a {
+    display: block; /* Каждая ссылка занимает отдельную строку */
+    margin-bottom: 5px; /* Отступ между ссылками */
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.language__options a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+.arrow-icon {
+    transition: transform 0.3s ease; /* Анимация поворота */
+}
+
+.arrow-icon.rotated {
+    transform: rotate(180deg); /* Поворот на 180 градусов */
+}
 
 
 
@@ -1255,13 +1317,18 @@ ul,li{
     .container {
         max-width: 1280px;
     }
-
+    .language__options_menu {
+        
+        
+        left: 80%; /* Отцентрируем по горизонтали */
+       
+    }
 }
 /* 992-1319 */
 @media screen and (max-width: 1319px) {
     .container {
         max-width: 100%;
-        padding: 0 20px;
+        padding: 0 25px;
     }
     .rect__size{
         width: 50px;
@@ -1323,7 +1390,7 @@ ul,li{
         gap: 40px;
     }
     .industrial__rect-container{
-        width: 90%;
+        width: 100%;
         height: 180px;
     }
     .help__set{
@@ -1409,7 +1476,10 @@ ul,li{
     .about__slider_set{
         width: 100%;
     }
-    
+    .language__options_menu {
+        left: 77%; /* Отцентрируем по горизонтали */
+
+    }
 }
 /* 768-991 */
 @media screen and (max-width: 991px) {
@@ -1505,6 +1575,10 @@ ul,li{
         justify-content: center;
         flex-wrap: wrap;
         gap: 50px;
+    }
+    .language__options_menu {
+        left: 66%; /* Отцентрируем по горизонтали */
+
     }
 }
 
@@ -1619,7 +1693,10 @@ ul,li{
         width: 100%;
         padding: 22px 0;
     }
-    
+    .language__options_menu {
+        left: 80%; /* Отцентрируем по горизонтали */
+
+    }
 
 
 }
@@ -1752,7 +1829,7 @@ ul,li{
         padding: 15px 0;
     }
     .label {
-        font-size: 10px;
+        font-size: 14px;
     }
     .input::placeholder { 
         font-size: 16px;   
@@ -1793,18 +1870,13 @@ ul,li{
     .our__set{
         gap: 30px;
     }
-}
+    .language__options_menu {
+        left: 70%; /* Отцентрируем по горизонтали */
 
-/* 375-457 */
-@media screen and (max-width: 457px) {
-    
+    }
     .menu {
         width: 180px;
     
-    }
-    .popup__btn_mob{
-        width: 150px;
-        font-size: 16px;
     }
     .popup__text{
         font-size: 16px;
@@ -1814,15 +1886,25 @@ ul,li{
         font-size: 16px;
        
     }
+    .popup__content{
+        padding: 20px;
+    }
+    .popup__btn_mob{
+        width: 150px;
+        font-size: 16px;
+    }
+}
+
+/* 375-457 */
+@media screen and (max-width: 457px) {
+     
     .offer__text{
         width: 300px;
     }
     .team__wrapp {
         padding: 10px;
     }
-    .popup__content{
-        padding: 20px;
-    }
+    
     .industrial__wrapp_kit{
         flex-direction: column;
         gap: 5px;

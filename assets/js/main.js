@@ -374,3 +374,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+function changeImage(element, newSrc) {
+  element.querySelector('.footer__social_img').src = newSrc;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const languageSetDesktop = document.querySelector('.header__set .language__set');
+  const languageOptionsDesktop = document.querySelector('.header__set .language__options');
+  const arrowIconDesktop = document.querySelector('.header__set .arrow-icon');
+
+  const languageSetMobile = document.querySelector('.header__set_mob .language__set');
+  const languageOptionsMobile = document.querySelector('.header__set_mob .language__options');
+  const arrowIconMobile = document.querySelector('.header__set_mob .arrow-icon');
+
+  // Функция для переключения меню и иконки
+  function toggleLanguageMenu(languageOptions, arrowIcon) {
+    languageOptions.classList.toggle('language__options_menu');
+    arrowIcon.classList.toggle('rotated');
+  }
+
+  // Обработчик для десктопной версии
+  languageSetDesktop.addEventListener('click', function(event) {
+    event.preventDefault();
+    toggleLanguageMenu(languageOptionsDesktop, arrowIconDesktop);
+  });
+
+  // Обработчик для мобильной версии
+  if (languageSetMobile) {
+    languageSetMobile.addEventListener('click', function(event) {
+      event.preventDefault();
+      toggleLanguageMenu(languageOptionsMobile, arrowIconMobile);
+    });
+  }
+});
+
+
+
