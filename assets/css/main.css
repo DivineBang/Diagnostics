@@ -440,7 +440,7 @@ ul,li{
 }
 .video__rect{
     position: absolute;
-    bottom: 0;
+    bottom: -0.5px;
     left: 0.1px;
     display: flex;
     align-items: center;
@@ -608,7 +608,7 @@ ul,li{
 }
 .helps__rect{
     position: absolute; /* Абсолютное позиционирование для прижатия к углу */
-    top: 0;
+    top: -0.5px;
     right: 0;
     display: flex;
     align-items: center;
