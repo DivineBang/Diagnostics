@@ -90,6 +90,7 @@ ul,li{
 /* animation end*/
 .offer{
     position: relative;
+    
     height: 700px;
     background: url("../img/photo_11.png") no-repeat center;
 }
@@ -298,17 +299,17 @@ ul,li{
     background: #FE8C00;
 }
 .offer__set{
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    bottom: 0;
+    margin-top: 25px;
 }
+
 .offer__wrapp{
     width: 525px;
     display: flex;
     flex-direction: column;
-    margin-right: 100px;
     gap: 25px;
 }
 
@@ -340,6 +341,9 @@ ul,li{
     
     width: 26px;
     height: 26px;
+}
+.offer__rect:hover{
+    background-color: #ffffff00;
 }
 .partners {
     padding: 30px 0;
@@ -436,7 +440,7 @@ ul,li{
 }
 .video__rect{
     position: absolute;
-    bottom: -1px;
+    bottom: 0;
     left: 0.1px;
     display: flex;
     align-items: center;
@@ -446,6 +450,9 @@ ul,li{
     height: 80px;
     background-color: #fff;
     clip-path: polygon(100% 0, 100% 100%, -250% 100%)
+}
+.video__rect:hover{
+    background-color: #101820;
 }
 .industrial{
     padding: 70px 0;
@@ -601,7 +608,7 @@ ul,li{
 }
 .helps__rect{
     position: absolute; /* Абсолютное позиционирование для прижатия к углу */
-    top: -1px;
+    top: 0;
     right: 0;
     display: flex;
     align-items: center;
@@ -612,13 +619,16 @@ ul,li{
     background-color: #fff;
     clip-path: polygon(100% 100%, 100% 0, -250% 0);
 }
+.helps__rect:hover{
+    background-color: #181818;
+}
 .how{
     position: relative;
     padding: 70px 0;
 }
 .how__rect{
     position: absolute; /* Абсолютное позиционирование для прижатия к углу */
-    top: -1px;
+    top: -0.5px;
     left: 0;
     display: flex;
     align-items: center;
@@ -628,6 +638,9 @@ ul,li{
     height: 80px;
     background-color: #181818;
     clip-path: polygon(0 100%, 0 0, 350% 0);
+}
+.how__rect:hover{
+    background-color: #fff;
 }
 .how__title{
     text-align: center;
@@ -665,7 +678,7 @@ ul,li{
 }
 .our__rect{
     position: absolute; /* Абсолютное позиционирование для прижатия к углу */
-    top: -1px;
+    top: -0.5px;
     right: 0;
     display: flex;
     align-items: center;
@@ -675,6 +688,9 @@ ul,li{
     height: 80px;
     background-color: #fff;
     clip-path: polygon(100% 100%, 100% 0, -250% 0);
+}
+.our__rect:hover{
+    background-color: #181818;
 }
 .our__title{
     font-size: 45px;
@@ -869,7 +885,7 @@ ul,li{
 }
 .industries__rect-mod{
     position: absolute; /* Абсолютное позиционирование для прижатия к углу */
-    top: -2px;
+    top: 0;
     left: 0;
     display: flex;
     align-items: center;
@@ -879,6 +895,9 @@ ul,li{
     height: 80px;
     background-color: #181818;
     clip-path: polygon(0 100%, 0 0, 350% 0); 
+}
+.industries__rect-mod:hover{
+    background-color: #fff;
 }
 .industries__title{
     text-align: center;
@@ -920,7 +939,7 @@ ul,li{
 }
 .footer__rect{
     position: absolute; /* Абсолютное позиционирование для прижатия к углу */
-    top: -1px;
+    top: 0;
     right: 0;
     display: flex;
     align-items: center;
@@ -930,6 +949,9 @@ ul,li{
     height: 80px;
     background-color: #fff;
     clip-path: polygon(100% 100%, 100% 0, -250% 0);
+}
+.footer__rect:hover{
+    background-color: #181818;
 }
 .footer__set{
     display: flex;
@@ -949,6 +971,14 @@ ul,li{
     font-size: 18px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.6);
+}
+.footer__text_social{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+}
+.footer__text:hover{
+    color: #FF5C00;
 }
 .footer__social_set{
     padding-top: 50px;
@@ -970,7 +1000,7 @@ ul,li{
     width: 100%;
     height: 2px;
     background-color: rgb(255, 255, 255,0.2);
-    margin: 50px 0;
+    margin: 50px 0 30px;
 }
 .privacy{
     display: flex;
@@ -1013,7 +1043,7 @@ ul,li{
 }
 .about__rect{
     position: absolute; /* Абсолютное позиционирование для прижатия к углу */
-    bottom: 0;
+    bottom: -0.5px;
     left: 0;
     display: flex;
     align-items: center;
@@ -1023,6 +1053,9 @@ ul,li{
     height: 80px;
     background-color: #FF5C00;
     clip-path: polygon(0 0, 0 100%, 350% 100%);
+}
+.about__rect:hover{
+    background-color: #fff;
 }
 .about__set{
     display: flex;
@@ -1113,7 +1146,7 @@ ul,li{
 }
 .team__rect{
     position: absolute; /* Абсолютное позиционирование для прижатия к углу */
-    top: -1px;
+    top: -0.5px;
     right: 0;
     display: flex;
     align-items: center;
@@ -1123,6 +1156,9 @@ ul,li{
     height: 80px;
     background-color: #fff;
     clip-path: polygon(100% 100%, 100% 0, -250% 0);
+}
+.team__rect:hover{
+    background-color: #FF5C00;
 }
 .team__title{
     text-align: center;
@@ -1219,9 +1255,9 @@ ul,li{
     .container {
         max-width: 1280px;
     }
-    
+
 }
-/* 992-1309 */
+/* 992-1319 */
 @media screen and (max-width: 1319px) {
     .container {
         max-width: 100%;
@@ -1231,8 +1267,10 @@ ul,li{
         width: 50px;
         height: 50px;
     }
+    .offer__set{
+        margin-top: 27px;
+    }
     .offer__wrapp{
-        margin-right: 0;
         width: 500px;
     }
     
@@ -1371,6 +1409,7 @@ ul,li{
     .about__slider_set{
         width: 100%;
     }
+    
 }
 /* 768-991 */
 @media screen and (max-width: 991px) {
@@ -1379,9 +1418,12 @@ ul,li{
     }
     .offer__set{
         flex-direction: column;
+        position: absolute;
+        margin-top: 0;
+        bottom: 0;
     }
     .offer{
-        height: 1070px;
+        height: 1050px;
     }
     .offer__img{
         width: auto;
@@ -1486,9 +1528,6 @@ ul,li{
     .popup__btn_mob{
         width: 180px;
         margin: 0 auto 20px auto;
-    }
-    .popup__text{
-
     }
     /*  Burger start */
     
