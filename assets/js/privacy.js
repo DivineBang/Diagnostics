@@ -71,23 +71,6 @@ $('.header__menu').click(function (event) {
   
 
   document.addEventListener('DOMContentLoaded', function() {
-    const languageSet = document.querySelector('.language__set');
-    const languageOptions = document.querySelector('.language__options');
-    const arrowIcon = document.querySelector('.arrow-icon');
-  
-    languageSet.addEventListener('click', function(event) {
-        event.preventDefault(); // Предотвращаем переход по ссылке
-  
-        // Переключаем класс для отображения меню
-        languageOptions.classList.toggle('language__options_menu');
-  
-        // Переключаем класс для поворота стрелки
-        arrowIcon.classList.toggle('rotated');
-    });
-  });  
-
-
-  document.addEventListener('DOMContentLoaded', function() {
     const languageSetDesktop = document.querySelector('.header__set .language__set');
     const languageOptionsDesktop = document.querySelector('.header__set .language__options');
     const arrowIconDesktop = document.querySelector('.header__set .arrow-icon');
