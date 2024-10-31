@@ -1600,10 +1600,40 @@ ul,li{
         gap: 50px;
         padding-top: 70px;
     }
-    .our__set{
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 50px;
+    .our__set {
+        display: flex;
+        overflow-x: auto;
+        gap: 25px;
+        padding: 70px 0 20px;
+        scroll-snap-type: x mandatory;
+    }
+    .our__wrapp{
+        flex: 0 0 auto;
+        
+    }
+    /* Кастомный скроллбар */
+    .our__set::-webkit-scrollbar {
+        height: 8px; /* Высота полосы прокрутки */
+    }
+    
+    .our__set::-webkit-scrollbar-track {
+        background-color: #f1f1f1; /* Цвет фона скроллбара */
+        border-radius: 4px;
+    }
+    
+    .our__set::-webkit-scrollbar-thumb {
+        background: linear-gradient(to right, #FE8C00, #FF5C00); /* Цвет градиента */
+        border-radius: 4px;
+    }
+    
+    
+    .our__set::-webkit-scrollbar-thumb {
+        background-color: #FF5C00; /* Цвет ползунка */
+        border-radius: 4px; /* Закругление ползунка */
+    }
+    
+    .our__set::-webkit-scrollbar-track {
+        background-color: #f0f0f0; /* Цвет трека */
     }
     .language__options_menu {
         left: 66%; /* Отцентрируем по горизонтали */
