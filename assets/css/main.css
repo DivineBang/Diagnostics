@@ -89,11 +89,24 @@ ul,li{
 
 /* animation end*/
 .offer{
-    position: relative;
-    
+    position: relative; 
+    overflow: hidden;
     height: 700px;
     background: url("../img/photo_11.png") no-repeat center;
 }
+.offer::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%; /* Задаем ширину блюра */
+    height: 30%; /* Задаем высоту блюра */
+    background: radial-gradient(circle at bottom right, rgba(255, 92, 0, 0.7), transparent 70%); /* Градиент, исходящий от правого нижнего угла */
+    filter: blur(50px); /* Размытие для мягкости */
+    transition: opacity 0.3s ease; /* Плавное появление */
+    pointer-events: none;
+}
+
 .header{
     padding: 30px 0;
 }
@@ -1034,8 +1047,24 @@ ul,li{
 .offer-about{
     position: relative;
     height: 600px;
+    overflow: hidden;
     background: url("../img/photo_1.png") no-repeat center;
 }
+.offer-about::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%; /* Задаем ширину блюра */
+    height: 30%; /* Задаем высоту блюра */
+    background: radial-gradient(circle at bottom right, rgba(255, 92, 0, 0.7), transparent 70%); /* Градиент, исходящий от правого нижнего угла */
+    filter: blur(50px); /* Размытие для мягкости */
+    
+    transition: opacity 0.3s ease; /* Плавное появление */
+    pointer-events: none;
+}
+
+
 .offer-about__title{
     color: #fff;
     font-size: 80px;
@@ -1284,17 +1313,17 @@ ul,li{
     padding: 10px; /* Отступы */
     z-index: 100; /* Для обеспечения видимости */
     top:    90px; /* Размещаем меню сразу под .language__set */
-    left: 70%; /* Отцентрируем по горизонтали */
+    left: 71%; /* Отцентрируем по горизонтали */
     transform: translateX(-50%); /* Сместим на половину ширины для точного центрирования */
     text-align: center;
-    width: 120px; /* Устанавливаем фиксированную ширину */
+    width: 100px; /* Устанавливаем фиксированную ширину */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавляем тень */
 }
 
 
 .language__options a {
     display: block; /* Каждая ссылка занимает отдельную строку */
-    margin-bottom: 5px; /* Отступ между ссылками */
+    margin-bottom: 10px; /* Отступ между ссылками */
     color: black; /* Цвет текста */
     text-decoration: none; /* Убираем подчеркивание */
 }
@@ -1320,7 +1349,7 @@ ul,li{
     .language__options_menu {
         
         
-        left: 80%; /* Отцентрируем по горизонтали */
+        left: 81%; /* Отцентрируем по горизонтали */
        
     }
 }
@@ -1477,7 +1506,7 @@ ul,li{
         width: 100%;
     }
     .language__options_menu {
-        left: 77%; /* Отцентрируем по горизонтали */
+        left: 74%; /* Отцентрируем по горизонтали */
 
     }
 }
@@ -1871,7 +1900,7 @@ ul,li{
         gap: 30px;
     }
     .language__options_menu {
-        left: 70%; /* Отцентрируем по горизонтали */
+        left: 75%; /* Отцентрируем по горизонтали */
 
     }
     .menu {
@@ -1893,6 +1922,9 @@ ul,li{
         width: 150px;
         font-size: 16px;
     }
+    .help__wrapp{
+        align-items: center;
+    }
 }
 
 /* 375-457 */
@@ -1908,6 +1940,10 @@ ul,li{
     .industrial__wrapp_kit{
         flex-direction: column;
         gap: 5px;
+    }
+    .language__options_menu {
+        left: 71%; /* Отцентрируем по горизонтали */
+
     }
 }
 
