@@ -1338,6 +1338,34 @@ ul,li{
 .arrow-icon.rotated {
     transform: rotate(180deg); /* Поворот на 180 градусов */
 }
+.logo__item,.footer__logo_img{
+    width: 167px;
+    height: 29.5px;
+}
+.how__wrapp_img{
+    width: 283px;
+    height: 574px;
+}
+.footer__app_img{
+    width: 120px;
+    height: 40px;
+}
+.our__img{
+    width: 94px;
+    height: 34px;
+}
+.privacy__img{
+    width: 89.5px;
+    height: 17.5px;
+}
+.footer__social_img{
+    width: 40px;
+    height: 40px;
+}
+.arrow-icon{
+    width: 12px;
+    height: 8px;
+}
 
 
 
